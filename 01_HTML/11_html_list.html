@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- What are the lists in HTML?
+1.ordered List
+2.Unordered List
+3.Description List
+4.Nested List
+-->
+<!--////////////////////////////ordered List/////////////////////////////////////////-->
+<!--<ol>-Unordered List
+    <li>- List Item -->
+<ol>
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<!-- patan gan one num eka kiyala-->
+<ol start="7">
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<br>
+<!-- order eka  typ eka dnna -->
+<ol type="a" >
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<br>
+<ol type="a" start="24">
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<br>
+<ol type="A" >
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<br>
+<ol type="i">
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<br>
+<ol type="I">
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<br>
+<ol type="1"><!-- defult-->
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ol>
+<!--////////////////////////////Unordered List [<ul>]/////////////////////////////////////////-->
+<!--<ul>-Unordered List
+    <li>- List Item -->
+<ul>
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ul>
+<!-- 1.circle -->
+<ul type="circle">
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ul>
+<!-- 2.disc -->
+<ul type="disc">
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ul>
+<!-- 3.square -->
+<ul type="square">
+    <li>Java</li>
+    <li>Go</li>
+    <li>Python</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>Perl</li>
+</ul>
+
+<!--////////////////////////////Description List/////////////////////////////////////////-->
+<!-- <dl> -  description list
+     <dt> - description title/trem
+     <dd> -  description detail
+     -->
+<dl>
+    <dt>HTML</dt>
+    <dd> HTML is the basic building block in a website</dd>
+
+    <dt>CSS</dt>
+    <dd> we use the build the representation of website</dd>
+
+</dl>
+<!--////////////////////////////Nested List/////////////////////////////////////////-->
+<ol>
+    <li>Java
+        <ul>
+            <li>PRF
+                <ul>
+                    <li>data 1</li>
+                    <li>data 2</li>
+                    <li>data3</li>
+                </ul></li>
+            <li>OOP
+                <ul>
+                    <li>Lesson 1</li>
+                    <li>Lesson 2</li>
+                    <li>Lesson 3</li>
+                </ul></li>
+            <li>DPH</li>
+        </ul></li>
+    <li>Python</li>
+</ol>
+
+<!--////////////////////////////Task 01/////////////////////////////////////////-->
+<ol>
+    <li>Sri Lanka</li>
+    <li>India
+        <ol type="a" start="5" >
+            <li>Western India
+                <ul type="square">
+                    <li>Goa</li>
+                    <li>Gujarat
+                        <ul type="disc" >
+                            <li>Area 1</li>
+                            <li>Area 2</li>
+                            <li>Area 3</li>
+                            <li>Area 4</li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Eastern India</li>
+            <li>Northern India</li>
+            <li>Southern India
+                <ul type="circle">
+                    <li>Kerala</li>
+                    <li>Chennai</li>
+                </ul></li>
+        </ol>
+    </li>
+</ol>
+<hr>
+<!--////////////////////////////Task 02/////////////////////////////////////////-->
+
+<ol>
+    <li>Sri Lanka</li>
+    <li>India
+        <ol type="a" start="5" >
+            <li><u>Western India</u>
+                <p> Welcome to <b>Western India</b></p>
+                <ul type="square">
+                    <li>Goa
+                        <p>Most<i> beautiful</i>  area in the world</p>
+                    </li>
+                    <li>Gujarat
+                        <ul type="disc" >
+                            <li>Area 1</li>
+                            <li><mark> Area 2 </mark></li>
+                            <li>Area 3</li>
+                            <li>Area 4</li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Eastern India</li>
+            <li>Northern India</li>
+            <li>Southern India
+                <ul type="circle">
+                    <li>Kerala</li>
+                    <li><h1><b>Chennai</b></h1></li>
+                </ul></li>
+        </ol>
+    </li>
+</ol>
+</body>
+</body>
+</html>

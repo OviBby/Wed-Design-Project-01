@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selector</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <style>
+        /*
+           !*
+           //////////////////////////////////////Child Combinator////////////////////////////////////////////////////
+           *!
+        section>p{
+            color: #ff00dd;
+        }
+
+           !*
+           //////////////////////////////////////Decendent Combinator////////////////////////////////////////////////////
+           *!
+           section p {
+               color: green;
+           }
+        */
+        /*
+        //////////////////////////////////////Adjacent Combinator////////////////////////////////////////////////////
+        */
+        h1+h2{
+            color: #ee00ff;
+        }
+        /*
+        //////////////////////////////////////General Sibling Combinator////////////////////////////////////////////////////
+        */
+        h1~h2{
+            color: #ff0080;
+        }
+
+    </style>
+</head>
+
+<body>
+<section>
+
+    <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Atque eaque, error maxime quos similique soluta suscipit. Accusantium,
+        aspernatur autem eaque error facilis laudantium minus nam odio pariatur, quasi, quis vitae.</p>
+    <p>2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque,
+        error maxime quos similique soluta suscipit. Accusantium,
+        aspernatur autem eaque error facilis laudantium minus nam odio pariatur, quasi, quis vitae.</p>
+    <div>
+        <p>3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque, error maxime quos similique soluta suscipit. Accusantium, aspernatur autem eaque error facilis laudantium minus nam odio pariatur, quasi, quis vitae.</p>
+
+    </div>
+    <p>4Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque,
+        error maxime quos similique soluta suscipit. Accusantium, aspernatur autem eaque error
+        facilis laudantium minus nam odio pariatur, quasi, quis vitae.</p>
+
+    <hr>
+
+    <h1>Sri Lanka</h1>
+    <h2>Jaffna</h2>
+    <h2>Colombo</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aliquam amet animi aspernatur cum dicta dolores eius facilis laborum, natus nisi odio omnis quam suscipit ullam velit veniam voluptatem voluptates!</p>
+    <h2>Pandura</h2>
+    <h2>Mathra</h2>
+
+</section>
+
+</body>
+
+</html>

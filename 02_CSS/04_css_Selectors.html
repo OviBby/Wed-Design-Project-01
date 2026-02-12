@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selector</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <style>
+
+        /*/////////////////////////type Selectors//////////////////////////////////////////*/
+        /*    h1{
+                color: blue;
+
+            }
+            h2{
+                color: blueviolet;
+            }
+            h4{
+                color: cyan;
+            }
+            p{
+                color: chartreuse;
+            }
+           !*!////////////////////////Id Selectors/////////////////////////////////////////!*!
+
+           #ijse{
+                background: cyan;
+            }
+           #sl{
+               background: aquamarine;
+           }
+           !*!////////////////////////Class Selectors/////////////////////////////////////////!*!
+           .myclass{
+               color: green;
+               background: chartreuse;
+           }
+
+           !*!//////////////////////// Universal Selectors/////////////////////////////////////////!*!
+
+           *{
+               color: purple;
+           }*/
+
+        /*/////////////////////////Attribute Selectors//////////////////////////////////////////*/
+        /*
+           [id]{
+               color: aquamarine;
+           }
+           !*!////////////////////////Attribute Selectors with a value/////////////////////////////////////////!*!
+
+           [href="www.ijse.lk"]{
+
+               background: aquamarine;
+           }
+           !*!////////////////////////Attribute Selectors with a given start value/////////////////////////////////////////!*!
+           [href^="https"]{
+               background: purple;
+           }
+           !*!////////////////////////Attribute Selectors with a give end value/////////////////////////////////////////!*!
+           [href$= "org"]{
+               background: brown;
+           }
+           !*!////////////////////////Attribute Selectors with a give part of value/////////////////////////////////////////!*!
+           [href*="code"]{
+               background: #ff76c6;
+           }
+           [href~="techologic"]{
+               background:darkolivegreen;
+           }
+
+           em[class]{
+               color: red;
+           }*/
+
+        h1{
+            color: blue;
+        }
+
+        /* //////////////////////////////pseudo class////////////////////////////////////////////////////////*/
+        h1:hover{
+            color: aqua;
+        }
+        h1:active{
+            color: darkslateblue;
+        }
+
+
+        /* a:link{
+             color: red;
+         }
+         a:visited{
+             color: green;
+         }
+         input:focus{
+             background: yellow;
+         }
+        ul li:first-child{
+             color: royalblue;
+         }
+         ol li:first-child{
+             color: orangered;
+         }
+         li:nth-child(2){
+             color: aqua;
+         }
+         li:nth-child(3){
+             color: #3ddf22;
+         }
+         li:nth-child(4){
+             color: #bf00ff;
+         }
+         li:nth-child(5){
+             color: #0077ff;
+         }*/
+
+        /* li:nth-last-child(4){
+             color: orangered;
+         }*/
+
+        /*li:nth-child(odd){
+            color: gold;
+        }*/
+
+        /* li:nth-child(n+4){
+             color: royalblue;
+         }*/
+        li:nth-child(3n-1){
+            color: aqua;
+        }
+        li:nth-child(3n+1){
+            color: #c8ff00;
+        }
+        li:nth-child(4n){
+            color: #ff00dd;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<h1>Hello World</h1>
+<!--
+<h4>Helo Java</h4>
+<h1 id="ijse"> helo Ijse</h1>
+<h4 >Hello Sri Lanka</h4>
+<p id="sl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam autem beatae
+    dolorem dolores dolorum et expedita harum id itaque magnam, molestiae odio perspiciatis quia quos rem,
+    sunt totam vitae.</p>
+
+<h2 class="myclass">Hi ! How Are You? </h2>
+<em class="myclass"> This is Important!</em>
+
+<a href="www.ijse.lk">Visit IJSE</a>
+<a href="www.google.com">Visit Google</a>
+<a href="https://www.google.com"> Visit Google 03 </a>
+<a href="https://www.canva.com"> Visit canva </a>
+<a href="http://www.google.com"> Visit Google 02 </a>
+<a href="https://www.wikipidiya.com"> Visit Wikipidiya </a>
+<a href="www.ijse.lk">Visit IJSE 02</a>
+<a href="muthuhara.org">muthuhara</a>
+<a href="www.code94labs.com">Code 94 labs</a>
+<a href="www.ceyentratechologic.com">Ceyentra Tecnologies</a>
+<a href="www.rarewebz techologic .com">Rarewebz Tecnologies</a>
+-->
+<h1> hello world!</h1>
+<a href="http://www.google.com">Visit Google</a><br>
+<a href="http://www.wikipidiya.com">Wikipidiya</a><br>
+<a href="www.ijse.lk"> IJSE</a>
+
+<form>
+    <input type="text">
+</form>
+<!--<ul>
+    <li>C</li>
+    <li>C++</li>
+    <li>C#</li>
+    <li>Java</li>
+    <li>Python</li>
+    <li>Go</li>
+</ul>
+<ol>
+    <li>C</li>
+    <li>C++</li>
+    <li>C#</li>
+    <li>Java</li>
+    <li>Python</li>
+    <li>Go</li>
+</ol>-->
+
+
+<ul>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>D</li>
+    <li>E</li>
+    <li>F</li>
+    <li>G</li>
+    <li>H</li>
+
+
+</ul>
+</body>
+
+</html>

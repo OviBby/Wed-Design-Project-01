@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Usage of Cascade Style Sheets - 01</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../assets/lib/normalize.css">
+
+    <style>
+
+
+
+        div{
+            width: 10vw;
+            height: 20vh;
+            position: absolute;
+
+
+        }
+        #cricle1{
+            background-color: white;
+            border-bottom-left-radius: 500px;
+            right: 0;
+        }
+        #cricle2{
+            background:white;
+            border-top-right-radius: 500px;
+            bottom: 0;
+
+        }
+        #cricle4{
+            background-color: white;
+            border-bottom-right-radius: 500px;
+
+        }
+        #cricle3{
+            background-color: white;
+            border-top-left-radius: 500px;
+
+            bottom: 0;
+            right: 0;
+        }
+
+        #id1{
+            width: 50vw;
+            height: 50vh;
+            position: absolute;
+            background-color:red;
+
+        }
+        #id2{
+            width: 50vw;
+            height: 50vh;
+            background-color: green;
+            right: 0;
+        }
+        #id3{
+            width: 50vw;
+            height: 50vh;
+            background-color: yellow;
+            bottom: 0;
+        }
+        #id4{
+            width: 50vw;
+            height: 50vh;
+            background-color: deeppink;
+            bottom: 0;
+            right: 0;
+        }
+
+
+
+        #Square1{
+            background-color: white;
+            width: 10vw;
+            height: 20vh;
+            aspect-ratio: 1/1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #Circle9{
+            background-color: red;
+            width: 5vw;
+            height: 10vh;
+            border-radius: 100%;
+            aspect-ratio: 1/1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #cricle5{
+            background-color: white;
+            width: 10vw;
+            height: 10vh;
+            aspect-ratio: 1/1;
+            border-bottom-left-radius: 500px;
+            border-bottom-right-radius: 500px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #cricle6{
+            background-color: white;
+            width: 10vw;
+            height: 10vh;
+            aspect-ratio: 1/1;
+            border-top-right-radius: 500px;
+            border-top-left-radius: 500px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        #section1{
+            width: 50vw;
+            height: 50vh;
+            position: absolute;
+
+        }
+        #Circle10{
+
+            background-color:white;
+            border-radius: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #Square2{
+            width: 5vw;
+            height: 10vh;
+            background-color:red;
+
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #section2{
+            width: 50vw;
+            height: 50vh;
+            position: absolute;
+            right: 0;
+        }
+        #Circle11{
+            background-color:white;
+            border-radius: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        #Square3{
+            width: 5vw;
+            height: 10vh;
+            background-color: red;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #section3{
+            width: 50vw;
+            height: 50vh;
+            position: absolute;
+            bottom: 0;
+        }
+        #Circle12{
+            background-color: white;
+            border-radius: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #Square4{
+            background-color: red;
+            width: 5vw;
+            height: 10vh;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #section4{
+            width: 50vw;
+            height: 50vh;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        #Circle13{
+            background-color: white;
+            border-radius: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        #Square5{
+            width: 5vw;
+            height: 10vh;
+            background-color: red;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+<section id="section1">
+    <div id="id1"></div>
+    <div id="Circle10"></div>
+    <div id="Square2"></div>
+
+</section>
+<section id="section2">
+    <div id="id2"></div>
+    <div id="Circle11"></div>
+    <div id="Square3"></div>
+
+</section>
+
+<section id="section3">
+    <div id="id3"></div>
+    <div id="Circle12"></div>
+    <div id="Square4"></div>
+</section>
+
+
+
+
+<section id="section4">
+    <div id="id4"></div>
+    <div id="Circle13"></div>
+    <div id="Square5"></div>
+</section>
+
+
+<div id="cricle1"></div>
+<div id="cricle2"></div>
+<div id="cricle3"></div>
+<div id="cricle4"></div>
+<div id="cricle5"></div>
+<div id="cricle6"></div>
+<div id="cricle7"></div>
+<div id="cricle8"></div>
+
+
+
+
+
+
+<div id="Square1"></div>
+<div id="Circle9"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

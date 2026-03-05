@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>css positioning</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="assets/lib/normalize.css">
+
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        section{
+            width: 800px;
+            height: 300px;
+            border: 5px solid red;
+            position: relative;
+        }
+        div{
+            width: 100px;
+            aspect-ratio: 1/1;
+            position: absolute;
+        }
+        #id1{
+            background-color: #c8ff00;
+            top: 20px;
+            left: 20px;
+        }
+        #id2{
+            background-color: blue;
+            right: 0px;
+
+        }
+        #id3{
+            background-color: pink;
+            bottom:20px;
+            left: 20px;
+        }
+        #id4{
+            background-color: green;
+            right: 20px;
+            bottom: 20px;
+        }
+        #id5{
+            background-color: #ff9900;
+            top: 100px;
+            left: calc(50px + 300px);
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-$END$
+<section>
+    <div id="id1"></div>
+    <div id="id2"></div>
+    <div id="id3"></div>
+    <div id="id4"></div>
+    <div id="id5"></div>
+</section>
+
+
+
+
 </body>
+
 </html>

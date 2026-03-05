@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Traversing</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <style>
+        #mybtn{
+            background-color: #ff00dd;
+        }
+        button{
+            background-color: red;
+        }
+        .btn{
+            background-color: green;
+        }
+        body > section >h1{ /*(0 , 0 , 0 , 1)+(0 , 0 , 0 , 0)+(0 , 0 , 0 , 1)+(0 , 0 , 0 , 0)+(0 , 0 , 0 , 1) = (0 , 0 , 0 , 3)*/
+            color: #ff0080;
+        }
+
+        section >h1{ /*(0 , 0 , 0 , 1)+(0 , 0 , 0 , 0)+(0 , 0 , 0 , 1) = (0 , 0 , 0 , 2)*/
+            color: #df6436;
+        }
+
+        h1{/*(0 , 0 , 0 , 1)*/
+            color: gold;
+        }
+
+    </style>
+
 </head>
+
 <body>
-$END$
+<button id="mybtn" class="btn"> Click me</button>
+
+
+<section>
+    <h1>Hello World!</h1>
+</section>
+
 </body>
+
 </html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let result ;
+ let x = "Hello, world!";
+
+ /*===============charAt()=================*/
+
+ result = x.charAt(7);
+ console.log(result);//w
+
+ result = x.charAt(9);
+ console.log(result);//r
+
+ result = x.charAt(11);
+ console.log(result);//d
+
+ /*===============charCodeAt()=================*/
+
+ result = x.charCodeAt(0);
+ console.log(result);//72
+
+ result = x.charCodeAt(1);
+ console.log(result);//101
+
+ /*===============concat()=================*/
+
+ var a = "Hello";
+ var b = "Hi";
+ var c = "wow";
+
+ result = a.concat(b);
+ console.log(result);//HelloHi
+
+ result = a.concat(b,c);
+ console.log(result);//HelloHiwow
+
+ result = a.concat("*",b,"*",c);
+ console.log(result);//Hello*Hi*wow
+
+ /*===============endsWith()=================*/
+
+ var url1 = "www.ijse.lk";
+ var url2 = "www.wikipidia.com";
+ var url3 = "https://rootcode.io";
+
+ result =url1.endsWith(".lk");
+ console.log(result);//true
+
+ result =url2.endsWith(".com");
+ console.log(result);//true
+
+ result =url3.endsWith(".io");
+ console.log(result);//true
+
+ result =url3.endsWith(".com");
+ console.log(result);//false
+
+ /*===============startsWith()=================*/
+
+ result =url1.startsWith("www");
+ console.log(result);//true
+
+ result = url3.startsWith("https");
+ console.log(result);//true
+
+ result = url3.startsWith("http");
+ console.log(result);//false
+
+ result = url3.startsWith("rootcode");
+ console.log(result);//false
+
+ /*===============includes()=================*/
+
+ var fruits = "Apple Banana Kiwi";
+
+ result =fruits.includes("Banana");
+ console.log(result);//true
+
+ result =fruits.includes("Orange");
+ console.log(result);//false
+
+ /*===============search()=================*/
+
+ result =fruits.search("Banana");
+ console.log(result);//6
+
+ result =fruits.search("Orange");
+ console.log(result);//-1
+
+ /*===============replace()=================*/
+
+ var y = "Hello world!";
+
+ result =y.replace("world","Duniya");
+ console.log(result);//Hello Duniya
+
+ y = "A B C D E F";
+ console.log(y); //A B C D E F
+ result =y.replace(" ",",");
+ console.log(result);//A ,B C D E F
+
+/*===============replaceAll()=================*/
+
+ result =y.replaceAll(" ",",");
+ console.log(result);//A ,B, C, D, E, F
+
+
+ /*===============slice()=================*/
+
+ x="Hello,world!";
+ result =x.slice(2,7); //7 index not included
+ console.log(result);//llo,w
+
+ /*===============substring()=================*/
+
+ x="Hello,world!";
+ result =x.substring(2,7); //7 index not included
+ console.log(result);//llo,w
+
+
+ /*===============split()=================*/
+
+ x="mango,banana,apple,orange";
+ result =x.split(",");
+ console.log(result);//["mango","banana","apple","orange"]
+
+ x="mangoxxbananaxxapplexxorange";
+ result =x.split("xx");
+ console.log(result);//["mango","banana","apple","orange"]
+
+ /*===============toLowerCase() and toUpperCase()=================*/
+
+ var msg ="Hello! Welcome to Sri Lanka";
+
+ result =msg.toLowerCase();
+ console.log(result);//hello! welcome to sri lanka
+
+ result =msg.toUpperCase();
+ console.log(result);//HELLO! WELCOME TO SRI LANKA
+
+
+ /*===============trim()=================*/
+ msg ="     Hello! Welcome to Sri Lanka      ";
+ console.log(msg);
+ result =msg.trim();
+ console.log(result);//Hello! Welcome to Sri Lanka
+
+ /*===============length=================*/
+ x="ABCDEF";
+ console.log(x.length);//6
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

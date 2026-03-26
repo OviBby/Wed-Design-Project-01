@@ -6,21 +6,7 @@
 </head>
 <body>
 <script>
- /*Case01*/
- var x = 65;
 
- var y= (x %2==0) ? "Even" : "Odd";
-
- console.log(y);
-
-//Case 02
-
- var marks=46;
- var grade = (marks >= 75) ? "A" :
-             (marks >= 65) ? "B" :
-             (marks >= 55) ? "C" :
-             (marks >= 35) ? "S" : "F";
- console.log("grade:",grade);
 
 //for loop
  for(var i=0;i<=10;i++){
@@ -42,6 +28,24 @@
  }while (z<=10);
 
 
+//break
+for(let i=1 ; i <= 5 ;i++){
+    if(i==3)
+        break;
+    console.log(i);
+}
+
+console.log("======");
+
+
+//continue
+for(let i=1 ; i <= 5 ;i++){
+    if(i==3)
+        continue;
+    console.log(i);
+}
+
+console.log("======");
 
 
 

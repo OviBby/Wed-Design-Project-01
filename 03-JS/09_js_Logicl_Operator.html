@@ -6,17 +6,29 @@
 </head>
 <body>
 <script>
-    var a = 10;
-    var b ="Hello";
-    var c  = true;
-    var d = 10.5;
 
-    console.log("Hello World!");
-    console.log(a);
-    console.log(b);
-    console.log(c);
-    console.log(d);
+    //Logical AND(&&):Return true if all values are true
+   console.log(true && true);//true
+   console.log(true && false);//false
+   console.log(false && true);//false
+   console.log(false && false);//false
+   console.log(true && true && true);//true
+   console.log(true && true && false);//false
+
+    //Logical OR(||):Return true if at least one value is true
+    console.log(true || true);//true
+    console.log(true || false);//true
+    console.log(false || true);//true
+    console.log(false || false);//false
+    console.log(true || true || true);//true
+    console.log(true || true || false);//true
+    console.log(true || false || false);//true
+    console.log(false || false || false);//false
+
+    //Logical NOT(!):Return the opposite of a value
+    console.log(!true);//false
+    console.log(!false);//true
+
 </script>
-<script src="03-JS/script.js"></script>
 </body>
 </html>

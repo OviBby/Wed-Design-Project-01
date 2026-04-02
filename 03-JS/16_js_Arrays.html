@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+<body>
+<script>
+ //1. Literal based array
+  /*
+  in java
+  ========
+  int [] x ={10,20,30,40};
+  * */
+
+ let x = [];//empty array ekak
+ x=[10,20,30,40];
+ console.log(x);
+
+ //2. Array constructor
+ let y = new Array(10,20,30,40);
+ console.log(y);
+
+//array eka index ekn value eka ganna me widiyta
+ x=[10,20,30,40,50,"Sri lanka",function (){console.log("Hello World")},["A","B","C"],true];
+ console.log(x);
+ console.log(x[0]);//10
+ console.log(x[1]);//20
+console.log(x[5]);//"Sri lanka"
+ console.log(x[6]);//function
+ x[6]();// function eka athule  thiyen eka  call wenne "Hello World"
+ console.log(x[7]);//["A","B","C"]
+ console.log(x[7][0])//"A"  (arraye eka arrya index eka gnjne me widiyata)
+ console.log(x[8]);//true
+ console.log(x[9]);//Hello World
+
+ console.log(x[10]);//undefined
+
+
+
+ // array update ///////////////////////////////////////////////////
+ x[0]="Uk";
+ x[1]=function (a,b) { return a+b;}
+ x[1](10,20);
+ console.log(x);
+
+
+ //2d array//////////////////////////////////////////////
+ let z = [[10,20,30,40],[100,200,300],["hi","hello"],[["Sri lanka","India"],["Uk","America"]]];
+ console.log(z);
+</script>
+</body>
+</html>

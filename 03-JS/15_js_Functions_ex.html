@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+// ///////////////////////////Find Even or Odd Name function////////////////////////////
+
+ function num(num1) {
+     if (num1 % 2 == 0) {
+         console.log("This is a Even number");
+     } else {
+         console.log("This is a Odd number");
+     }
+
+ }
+ num(10);
+ num(155);
+
+
+//////////////////////Find Even or Odd function Expression/////////////////////////////////////////
+
+const mynum = function (num1) {
+    if (num1 % 2 == 0) {
+        console.log("This is a Even number");
+    } else {
+        console.log("This is a Odd number");
+    }
+
+}
+ mynum(5);
+ mynum(180);
+
+
+/////////////////////// Find Even or Odd arrow function/////////////////////////////
+
+const mynum =  (num1)  => {
+    if (num1 % 2 == 0) {
+        console.log("This is a Even number");
+    } else {
+        console.log("This is a Odd number");
+    }
+
+}
+mynum(7);
+mynum(197);
+
+
+//////////////////Factorial name function////////////////////////////////
+
+ function  findfact(num){
+     let r = 1;
+     for(let i = 1 ; i <= num ; i++){
+         r *= i;
+     }
+     return r;
+ }
+ console.log(findfact(5));
+
+//////////////////Factorial  Expression////////////////////////////
+
+const findfact1 = function  (num){
+    let r = 1;
+    for(let i = 1 ; i <= num ; i++){
+        r *= i;
+    }
+    return r;
+}
+console.log(findfact1(5));
+
+//////////////Factorial arrow function///////////////////
+
+const findfact2 =   (num) => {
+    let r = 1;
+    for(let i = 1 ; i <= num ; i++){
+        r *= i;
+    }
+    return r;
+}
+console.log(findfact2(5));
+
+</script>
+</body>
+</html>

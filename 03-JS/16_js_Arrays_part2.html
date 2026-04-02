@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+
+ let z = ["Mahinda","Ranil","Anura"];
+ console.log(z);
+ z.push("Puthano");
+ console.log(z);
+ z.pop();// thiyen anthima array eka remove ekrala dna eka krnna ene
+ console.log(z);
+
+ z.shift();// issaraha thibba elment eka ina wenna meka shift kiya eken
+
+ z.unshift("Gota");//issrahta elemnta eka add krnna onne unam meka thmai dnne nne
+ z.unshift("naml bby","Yoshitha bby");
+
+
+ //concat()
+
+var a= ["A","B","C"];
+var b = ["D","E","F"];
+var c =["G","H","I"];
+
+var result1 = a.concat(b);
+console.log("Result1 :",result1);
+
+var result2 = b.concat(a);
+console.log("Result2",result2);
+
+var result3 = b.concat(b,a);
+console.log("Result3",result3);
+
+
+//slice() -get a copy of an array portion
+
+ var y = [10,20,30,40,50,60,70,80,90,100];
+ var r1 =y.slice(3);
+ console.log("r1",r1);//[40,50,60,70,80,90,100]
+
+ var r2 = y.slice(3,8);
+ console.log("r2",r2);//[40,50,60,70,80]
+
+ var r3 = y.slice(-1);
+ console.log("r3",r3);//100
+
+ var r4 = y.slice(-3)
+ console.log("r4",r4);//80,90,100
+
+//splice();
+var y =[10,20,30,40,50,60,70,80,90,100];
+var r5 = y.splice(7);
+console.log("r5",r5);
+console.log("y:",y);
+
+var r6 = y.splice(1,5,100,200,300);
+console.log("r6",r6);
+console.log("y:",y);
+
+console.log("================================================");
+//includes
+ let fruits=["Mango","Bnana","Apple","Pineapple"];
+ console.log(fruits.includes("Bnana"));
+ console.log(fruits.includes("Oragen"));
+
+ console.log("================================================");
+
+ //forEach();
+ fruits.forEach(function (item){
+     console.log(item);
+ });
+
+ console.log("================================================");
+
+ //map():
+ fruits.map(item =>{
+     console.log(item);
+ });
+
+ console.log("================================================");
+
+fruits.map((item,index)=>{
+    console.log(index+":"+item);
+ });
+
+ console.log("================================================");
+
+//filter = awasha thia arna aluth array eka ganna eka
+ var k =[10,11,20,21,30,31,40,41,50,51];
+ new_k=k.filter(function (item){
+     let result = item%2==0;
+     return result;
+
+
+
+ });
+ console.log("new k:"+ new_k);
+
+ console.log("================================================");
+
+//sort(): = podi eka indan loku eka sort ktnwa  arna array eka print krna eka
+ let j = [12,10,25,22,13,20,55,40,67,42,11];
+ let sort_j = j.sort();//ascending order
+ console.log(sort_j);
+
+
+
+ // loku eka idn podi ekata gganna mekan
+ let sort_j_j = j.sort((a,b)=>b -a)//descnding order
+ console.log(sort_j_j)
+
+ console.log("================================================");
+
+ //reveres(): = piti passe idan issrhata printa wenwa
+ var v =["a","b","c","d","e"];
+ var reveres_v= v.reverse();
+ console.log(reveres_v);
+
+ console.log("================================================");
+
+ //join();
+ var join_result_1 = v.join(",");
+ var join_result_2 = v.join("*");
+ var join_result_3 = v.join("=>");
+ var join_result_4 = v.join("#");
+
+ console.log(join_result_1);
+ console.log(join_result_2);
+ console.log(join_result_3);
+ console.log(join_result_4);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+let x =[10,20,30,40,50,60];
+
+/*console.log(x.reverse());
+x.forEach(function (item){
+    if(x%2==0){
+        console.log(item+ "This is even")
+    }
+});*/
+
+console.log("======================================================");
+
+let z= [100,200,300];
+let re = z .concat (x);
+console.log(re);
+
+ let y = [10,13,16,17,18];
+y.forEach(function (item){
+if(y%2==0){
+    console.log(item + "This is Even number")
+}
+});
+
+console.log("======================================================");
+
+x.map(item => {
+ console.log(item);
+});
+
+console.log("======================================================");
+x.map (function (item,index){
+    console.log(item +":" +index);
+});
+
+console.log("======================================================");
+
+let m = [10,13,16,17,18];
+let new_m = m.filter(function (item){
+    let result = item % 2 ==0;
+    return result;
+
+});
+console.log("new :" + new_m);
+
+console.log("======================================================");
+
+ x.map(function (item,index){
+     console.log(index);
+ });
+
+console.log("======================================================");
+
+
+</script>
+</body>
+</html>

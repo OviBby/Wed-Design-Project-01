@@ -12,7 +12,7 @@
  }*/
 
  //Normal function
- function myFunction(){
+ /*function myFunction(){
      console.log("Hello World");
  }
  myFunction(); // meka call kroth thami print wenne nathm print wenne naha.
@@ -45,7 +45,31 @@ const findMul2 = function(num1,num2){
 const findMul3 = (num1,num2) => {
      console.log(num1*num2);
  }
- findMul3(10,40);
+ findMul3(10,40);*/
+
+
+/* //function constructor=====================
+ var func = new function ("a","b","c","return a + b");
+ var r = func(10,20);
+ console.log(r);*/
+
+ function a(callbackfun){
+     console.log("I'm A");
+     callbackfun();
+ }
+
+ function b(){
+     console.log("I'm B");
+ }
+
+ function c(){
+     console.log("I'm C");
+ }
+
+ a(b);
+ a(c);
+
+
 </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="topic"> welcome to java script</h1>
+
+<div id="div1"><h3>Welcome</h3> to india</div>
+<script>
+   var element = document.getElementById("topic");
+   var txt =element.innerText;
+   console.log(txt);
+
+
+ var div_element = document.getElementById("div1");
+   element.innerText="Hi!! Welcome to Java Script"
+   console.log(div_element.innerText);
+   console.log(div_element.innerHTML);
+
+   div_element.innerText="Hi!! Welcome to <i> JavaScript </i>";
+   div_element.innerHTML="Hi!! Welcome to <i> JavaScript </i>";
+
+   console.log(element.innerHTML);
+</script>
+
+</body>
+</html>

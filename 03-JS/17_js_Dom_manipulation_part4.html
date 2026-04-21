@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/lib/normalize.css">
+
+
+
+</head>
+<body>
+
+<h1 id="topic"> Coure</h1>
+
+<h2 name="subtopic1">HTML Coure </h2>
+
+<p class="myclass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad laudantium nesciunt nisi quia totam? Aliquam, culpa delectus et fugit impedit modi pariatur unde voluptates. Animi enim incidunt maiores molestiae odit!</p>
+
+<h2 name = "subtopic1">CSS Coure</h2>
+
+<p class="myclass" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda consequatur explicabo ipsa iure maxime natus nobis quibusdam, quo, sapiente soluta tenetur voluptates voluptatum? Adipisci blanditiis iusto laboriosam nihil quod.</p>
+
+<h2 name = "subtopic1">JS Coure</h2>
+
+<p class="myclass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam assumenda atque deserunt distinctio, dolores dolorum explicabo facere illo magni nulla numquam, quis, quisquam quod sit tempora veniam voluptas voluptate?</p>
+
+<ol>
+    <li>
+        <div>A</div>
+    </li>
+    <li>
+        <div>
+            B
+        </div>
+    </li>
+    <li>
+        <div>
+            C
+        </div>
+    </li>
+</ol>
+
+<ul>
+    <li>
+        <div>
+            A
+        </div>
+    </li>
+    <li>
+        <div>
+            B
+        </div>
+    </li>
+    <li>
+        <div>
+            C
+        </div>
+    </li>
+</ul>
+
+<script>
+    var h1_element = document.getElementById("topic");
+    h1_element.style.color = "red";
+
+    // color dmma elments walta
+    var h2_element =document.getElementsByTagName("h2");
+    var first_element = h2_element[0];
+    var second_element = h2_element[1];
+    var third_element = h2_element[2];
+
+    first_element.style.color = "pink";
+    second_element.style.color ="blue";
+    third_element.style.color ="green";
+
+    //get by class name
+    var p_element=document.getElementsByClassName("myclass");
+    var para_1 = p_element[0];
+    var para_2 = p_element[1];
+    var para_3 = p_element[2];
+
+    para_1.style.color = "pink";
+    para_2.style.color = "yellow";
+    para_3.style.color = "orange";
+
+
+    // get Elemnt By name
+
+    var subtopic1_element = document.getElementsByName("subtopic1");
+    subtopic1_element[0].style.backgroundColor = "green";
+    subtopic1_element[1].style.backgroundColor ="pink"
+    subtopic1_element[2].style.backgroundColor  ="yellow"
+
+    //guerySelector - adala element eka thami denne
+
+   /* document.querySelector("ol > li:first-child >div").style.color =" red";
+    document.querySelector("ol > li:last-child >div").style.color ="deeppink";
+    document.querySelector("ol").style.color = "orange"
+
+    document.querySelector("ul").style.color = "green"
+    document.querySelector("ul > li:first-child >div ").style.color = "yellow"*/
+
+    //querySelector all - collection eka denne
+    var div_element =document.querySelectorAll("li:first-child >div");
+    div_element[0].style.color ="red";
+    div_element[1].style.color = "pink"
+
+
+</script>
+</body>
+</html>

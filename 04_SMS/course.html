@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJSE - Course Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a6dff;
+            --primary-dark: #0050d0;
+            --secondary: #00c9a7;
+            --danger: #ff4757;
+            --warning: #ffa502;
+            --bg: #f0f4ff;
+            --sidebar-bg: #e8eeff;
+            --card: #ffffff;
+            --text: #1a1f36;
+            --text-muted: #6b7280;
+            --border: #d1deff;
+            --row-alt: #f6f9ff;
+            --green: #2ecc71;
+            --shadow: 0 4px 24px rgba(26,109,255,0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 28px;
+            height: 56px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 16px rgba(26,109,255,0.18);
+        }
+        .topbar .logo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .topbar .hamburger {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: background 0.2s;
+        }
+        .topbar .hamburger:hover { background: rgba(255,255,255,0.25); }
+        .topbar .hamburger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        /* LAYOUT */
+        .layout {
+            display: flex;
+            flex: 1;
+            min-height: calc(100vh - 56px);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 240px;
+            background: var(--sidebar-bg);
+            border-right: 1.5px solid var(--border);
+            padding: 32px 0 24px;
+            flex-shrink: 0;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 13px 28px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.97rem;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            transition: all 0.18s;
+            cursor: pointer;
+        }
+        .sidebar nav a:hover,
+        .sidebar nav a.active {
+            color: var(--primary);
+            background: rgba(26,109,255,0.07);
+            border-left-color: var(--primary);
+        }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            padding: 36px 48px;
+            max-width: 1100px;
+        }
+
+        /* PAGE TITLE */
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .page-title::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 22px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        /* FORM CARD */
+        .form-card {
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 32px 36px;
+            margin-bottom: 36px;
+            border: 1.5px solid var(--border);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 32px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .form-group.full { grid-column: 1 / -1; }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        input, select, textarea {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.97rem;
+            padding: 10px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 9px;
+            background: var(--bg);
+            color: var(--text);
+            outline: none;
+            transition: border 0.18s, box-shadow 0.18s;
+            width: 100%;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26,109,255,0.12);
+            background: #fff;
+        }
+        textarea { resize: vertical; min-height: 80px; }
+
+        /* BUTTONS */
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+        }
+        .btn {
+            padding: 10px 26px;
+            border: none;
+            border-radius: 9px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.97rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.18s;
+            letter-spacing: 0.02em;
+        }
+        .btn-save   { background: var(--green);   color: #fff; }
+        .btn-update { background: var(--primary); color: #fff; }
+        .btn-delete { background: var(--danger);  color: #fff; }
+        .btn-reset  { background: var(--secondary); color: #fff; }
+        .btn:hover  { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+        .btn:active { transform: translateY(0); }
+
+        /* TABLE */
+        .table-card {
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1.5px solid var(--border);
+            overflow: hidden;
+        }
+        .table-header {
+            padding: 20px 28px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1.5px solid var(--border);
+        }
+        .table-header h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .search-box {
+            padding: 8px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: 'Outfit', sans-serif;
+            outline: none;
+            width: 210px;
+            transition: border 0.18s;
+        }
+        .search-box:focus { border-color: var(--primary); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.93rem;
+        }
+        thead th {
+            background: var(--row-alt);
+            padding: 13px 18px;
+            text-align: left;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            border-bottom: 1.5px solid var(--border);
+        }
+        tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.13s;
+            cursor: pointer;
+        }
+        tbody tr:nth-child(even) { background: var(--row-alt); }
+        tbody tr:hover { background: rgba(26,109,255,0.06); }
+        tbody td {
+            padding: 12px 18px;
+            color: var(--text);
+            font-family: 'DM Mono', monospace;
+            font-size: 0.88rem;
+        }
+        tbody td:first-child {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        tbody td.name-col {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+        }
+
+        /* BADGE */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+        }
+        .badge-active   { background: #d4fae9; color: #1a7a4a; }
+        .badge-inactive { background: #ffe8ea; color: #c0392b; }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--text);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-size: 0.93rem;
+            font-weight: 500;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(.4,0,.2,1);
+            z-index: 9999;
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.success { background: var(--green); }
+        .toast.error   { background: var(--danger); }
+
+        /* EMPTY STATE */
+        .empty-state {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--text-muted);
+            font-size: 0.97rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <span class="logo">IJSE</span>
+    <button class="hamburger" onclick="toggleSidebar()">
+        <span></span><span></span><span></span>
+    </button>
+</div>
+
+<div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+            <a href="#" onclick="showPage('student')">Student Management</a>
+            <a href="#" onclick="showPage('course')" class="active" id="nav-course">Course Management</a>
+            <a href="#" onclick="showPage('registration')">Registration Management</a>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main" id="main-content">
+
+        <!-- DASHBOARD PAGE -->
+        <div id="page-dashboard" style="display:none">
+            <div class="page-title">Dashboard</div>
+            <div style="color:var(--text-muted)">Welcome to IJSE Management System.</div>
+        </div>
+
+        <!-- STUDENT PAGE -->
+        <div id="page-student" style="display:none">
+            <div class="page-title">Student Management</div>
+            <div class="form-card">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Student ID</label>
+                        <input type="text" id="s-id" placeholder="Auto-generated" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="s-name" placeholder="e.g. Kavindu Perera">
+                    </div>
+                    <div class="form-group">
+                        <label>NIC</label>
+                        <input type="text" id="s-nic" placeholder="e.g. 200012345678">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id="s-phone" placeholder="e.g. 0712345678">
+                    </div>
+                    <div class="form-group full">
+                        <label>Address</label>
+                        <textarea id="s-address" placeholder="No. 123, Main Street, City"></textarea>
+                    </div>
+                </div>
+                <div class="btn-row">
+                    <button class="btn btn-save"   onclick="saveStudent()">Save</button>
+                    <button class="btn btn-update" onclick="updateStudent()">Update</button>
+                    <button class="btn btn-delete" onclick="deleteStudent()">Delete</button>
+                    <button class="btn btn-reset"  onclick="resetStudent()">Reset</button>
+                </div>
+            </div>
+            <div class="table-card">
+                <div class="table-header">
+                    <h2>Student Records</h2>
+                    <input class="search-box" type="text" placeholder="Search students..." oninput="searchStudents(this.value)">
+                </div>
+                <table id="student-table">
+                    <thead><tr>
+                        <th>#ID</th><th>Name</th><th>NIC</th><th>Phone</th><th>Address</th>
+                    </tr></thead>
+                    <tbody id="student-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- COURSE PAGE -->
+        <div id="page-course">
+            <div class="page-title">Course Management</div>
+            <div class="form-card">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Course ID</label>
+                        <input type="text" id="c-id" placeholder="Auto-generated" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Course Name</label>
+                        <input type="text" id="c-name" placeholder="e.g. Full Stack Development">
+                    </div>
+                    <div class="form-group">
+                        <label>Duration (months)</label>
+                        <input type="number" id="c-duration" placeholder="e.g. 6" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Fee (LKR)</label>
+                        <input type="number" id="c-fee" placeholder="e.g. 25000" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="c-status">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label>Description</label>
+                        <textarea id="c-description" placeholder="Brief description of the course..."></textarea>
+                    </div>
+                </div>
+                <div class="btn-row">
+                    <button class="btn btn-save"   onclick="saveCourse()">Save</button>
+                    <button class="btn btn-update" onclick="updateCourse()">Update</button>
+                    <button class="btn btn-delete" onclick="deleteCourse()">Delete</button>
+                    <button class="btn btn-reset"  onclick="resetCourse()">Reset</button>
+                </div>
+            </div>
+            <div class="table-card">
+                <div class="table-header">
+                    <h2>Course Records</h2>
+                    <input class="search-box" type="text" placeholder="Search courses..." oninput="searchCourses(this.value)">
+                </div>
+                <table id="course-table">
+                    <thead><tr>
+                        <th>#ID</th><th>Course Name</th><th>Duration</th><th>Fee (LKR)</th><th>Status</th><th>Description</th>
+                    </tr></thead>
+                    <tbody id="course-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- REGISTRATION PAGE -->
+        <div id="page-registration" style="display:none">
+            <div class="page-title">Registration Management</div>
+            <div class="form-card">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Registration ID</label>
+                        <input type="text" id="r-id" placeholder="Auto-generated" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Student</label>
+                        <select id="r-student"><option value="">-- Select Student --</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Course</label>
+                        <select id="r-course"><option value="">-- Select Course --</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Registration Date</label>
+                        <input type="date" id="r-date">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="r-status">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-row">
+                    <button class="btn btn-save"   onclick="saveReg()">Save</button>
+                    <button class="btn btn-update" onclick="updateReg()">Update</button>
+                    <button class="btn btn-delete" onclick="deleteReg()">Delete</button>
+                    <button class="btn btn-reset"  onclick="resetReg()">Reset</button>
+                </div>
+            </div>
+            <div class="table-card">
+                <div class="table-header">
+                    <h2>Registration Records</h2>
+                    <input class="search-box" type="text" placeholder="Search registrations..." oninput="searchRegs(this.value)">
+                </div>
+                <table>
+                    <thead><tr>
+                        <th>#ID</th><th>Student</th><th>Course</th><th>Date</th><th>Status</th>
+                    </tr></thead>
+                    <tbody id="reg-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+    // ===== DATA STORES =====
+    let students    = JSON.parse(localStorage.getItem('ijse_students')    || '[]');
+    let courses     = JSON.parse(localStorage.getItem('ijse_courses')     || '[]');
+    let registrations = JSON.parse(localStorage.getItem('ijse_regs')     || '[]');
+    let selectedStudent = null, selectedCourse = null, selectedReg = null;
+    let currentPage = 'course';
+
+    // ===== NAVIGATION =====
+    function showPage(page) {
+        ['dashboard','student','course','registration'].forEach(p => {
+            document.getElementById('page-'+p).style.display = p === page ? '' : 'none';
+        });
+        document.querySelectorAll('.sidebar nav a').forEach(a => a.classList.remove('active'));
+        currentPage = page;
+        if (page === 'registration') { populateDropdowns(); renderRegs(); }
+        if (page === 'student') renderStudents();
+        if (page === 'course')  renderCourses();
+    }
+
+    function toggleSidebar() {
+        const s = document.getElementById('sidebar');
+        s.style.display = s.style.display === 'none' ? '' : 'none';
+    }
+
+    // ===== TOAST =====
+    function showToast(msg, type='success') {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast show ' + type;
+        setTimeout(() => t.className = 'toast', 2500);
+    }
+
+    // ===== SAVE HELPERS =====
+    function saveData() {
+        localStorage.setItem('ijse_students', JSON.stringify(students));
+        localStorage.setItem('ijse_courses',  JSON.stringify(courses));
+        localStorage.setItem('ijse_regs',     JSON.stringify(registrations));
+    }
+
+    // ===== STUDENT =====
+    function getStudentFields() {
+        return {
+            name: document.getElementById('s-name').value.trim(),
+            nic:  document.getElementById('s-nic').value.trim(),
+            phone:document.getElementById('s-phone').value.trim(),
+            address: document.getElementById('s-address').value.trim()
+        };
+    }
+    function populateStudentForm(s) {
+        document.getElementById('s-id').value = s.id;
+        document.getElementById('s-name').value = s.name;
+        document.getElementById('s-nic').value = s.nic;
+        document.getElementById('s-phone').value = s.phone;
+        document.getElementById('s-address').value = s.address;
+    }
+    function resetStudent() {
+        ['s-id','s-name','s-nic','s-phone','s-address'].forEach(id => document.getElementById(id).value = '');
+        selectedStudent = null;
+    }
+    function saveStudent() {
+        const f = getStudentFields();
+        if (!f.name || !f.nic) return showToast('Name & NIC required', 'error');
+        const id = students.length ? Math.max(...students.map(s=>s.id))+1 : 1;
+        students.push({id, ...f});
+        saveData(); renderStudents(); resetStudent();
+        showToast('Student saved!');
+    }
+    function updateStudent() {
+        if (!selectedStudent) return showToast('Select a student first', 'error');
+        const f = getStudentFields();
+        const idx = students.findIndex(s=>s.id===selectedStudent);
+        if (idx<0) return;
+        students[idx] = {...students[idx], ...f};
+        saveData(); renderStudents(); resetStudent();
+        showToast('Student updated!');
+    }
+    function deleteStudent() {
+        if (!selectedStudent) return showToast('Select a student first', 'error');
+        students = students.filter(s=>s.id!==selectedStudent);
+        saveData(); renderStudents(); resetStudent();
+        showToast('Student deleted!');
+    }
+    function renderStudents(filter='') {
+        const tbody = document.getElementById('student-tbody');
+        const list = filter ? students.filter(s =>
+            s.name.toLowerCase().includes(filter) || s.nic.includes(filter)
+        ) : students;
+        if (!list.length) { tbody.innerHTML = `<tr><td colspan="5"><div class="empty-state">No student records found.</div></td></tr>`; return; }
+        tbody.innerHTML = list.map(s => `
+    <tr onclick="selectStudent(${s.id})">
+      <td>${s.id}</td><td class="name-col">${s.name}</td>
+      <td>${s.nic}</td><td>${s.phone}</td><td>${s.address}</td>
+    </tr>`).join('');
+    }
+    function selectStudent(id) {
+        selectedStudent = id;
+        const s = students.find(x=>x.id===id);
+        if (s) populateStudentForm(s);
+    }
+    function searchStudents(v) { renderStudents(v.toLowerCase()); }
+
+    // ===== COURSE =====
+    function getCourseFields() {
+        return {
+            name:     document.getElementById('c-name').value.trim(),
+            duration: document.getElementById('c-duration').value.trim(),
+            fee:      document.getElementById('c-fee').value.trim(),
+            status:   document.getElementById('c-status').value,
+            description: document.getElementById('c-description').value.trim()
+        };
+    }
+    function populateCourseForm(c) {
+        document.getElementById('c-id').value = c.id;
+        document.getElementById('c-name').value = c.name;
+        document.getElementById('c-duration').value = c.duration;
+        document.getElementById('c-fee').value = c.fee;
+        document.getElementById('c-status').value = c.status;
+        document.getElementById('c-description').value = c.description;
+    }
+    function resetCourse() {
+        ['c-id','c-name','c-duration','c-fee','c-description'].forEach(id => document.getElementById(id).value = '');
+        document.getElementById('c-status').value = 'Active';
+        selectedCourse = null;
+    }
+    function saveCourse() {
+        const f = getCourseFields();
+        if (!f.name) return showToast('Course name required', 'error');
+        const id = courses.length ? Math.max(...courses.map(c=>c.id))+1 : 1;
+        courses.push({id, ...f});
+        saveData(); renderCourses(); resetCourse();
+        showToast('Course saved!');
+    }
+    function updateCourse() {
+        if (!selectedCourse) return showToast('Select a course first', 'error');
+        const f = getCourseFields();
+        const idx = courses.findIndex(c=>c.id===selectedCourse);
+        if (idx<0) return;
+        courses[idx] = {...courses[idx], ...f};
+        saveData(); renderCourses(); resetCourse();
+        showToast('Course updated!');
+    }
+    function deleteCourse() {
+        if (!selectedCourse) return showToast('Select a course first', 'error');
+        courses = courses.filter(c=>c.id!==selectedCourse);
+        saveData(); renderCourses(); resetCourse();
+        showToast('Course deleted!');
+    }
+    function renderCourses(filter='') {
+        const tbody = document.getElementById('course-tbody');
+        const list = filter ? courses.filter(c =>
+            c.name.toLowerCase().includes(filter)
+        ) : courses;
+        if (!list.length) { tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state">No course records found.</div></td></tr>`; return; }
+        tbody.innerHTML = list.map(c => `
+    <tr onclick="selectCourse(${c.id})">
+      <td>${c.id}</td>
+      <td class="name-col">${c.name}</td>
+      <td>${c.duration} mo</td>
+      <td>Rs. ${Number(c.fee).toLocaleString()}</td>
+      <td><span class="badge ${c.status==='Active'?'badge-active':'badge-inactive'}">${c.status}</span></td>
+      <td>${c.description || '-'}</td>
+    </tr>`).join('');
+    }
+    function selectCourse(id) {
+        selectedCourse = id;
+        const c = courses.find(x=>x.id===id);
+        if (c) populateCourseForm(c);
+    }
+    function searchCourses(v) { renderCourses(v.toLowerCase()); }
+
+    // ===== REGISTRATION =====
+    function populateDropdowns() {
+        const ss = document.getElementById('r-student');
+        const sc = document.getElementById('r-course');
+        const sv = ss.value, cv = sc.value;
+        ss.innerHTML = '<option value="">-- Select Student --</option>' +
+            students.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
+        sc.innerHTML = '<option value="">-- Select Course --</option>' +
+            courses.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+        ss.value = sv; sc.value = cv;
+    }
+    function getRegFields() {
+        return {
+            studentId: Number(document.getElementById('r-student').value),
+            courseId:  Number(document.getElementById('r-course').value),
+            date:      document.getElementById('r-date').value,
+            status:    document.getElementById('r-status').value
+        };
+    }
+    function resetReg() {
+        document.getElementById('r-id').value = '';
+        document.getElementById('r-student').value = '';
+        document.getElementById('r-course').value = '';
+        document.getElementById('r-date').value = '';
+        document.getElementById('r-status').value = 'Active';
+        selectedReg = null;
+    }
+    function saveReg() {
+        const f = getRegFields();
+        if (!f.studentId || !f.courseId || !f.date) return showToast('All fields required', 'error');
+        const id = registrations.length ? Math.max(...registrations.map(r=>r.id))+1 : 1;
+        registrations.push({id, ...f});
+        saveData(); renderRegs(); resetReg();
+        showToast('Registration saved!');
+    }
+    function updateReg() {
+        if (!selectedReg) return showToast('Select a registration first', 'error');
+        const f = getRegFields();
+        const idx = registrations.findIndex(r=>r.id===selectedReg);
+        if (idx<0) return;
+        registrations[idx] = {...registrations[idx], ...f};
+        saveData(); renderRegs(); resetReg();
+        showToast('Registration updated!');
+    }
+    function deleteReg() {
+        if (!selectedReg) return showToast('Select a registration first', 'error');
+        registrations = registrations.filter(r=>r.id!==selectedReg);
+        saveData(); renderRegs(); resetReg();
+        showToast('Registration deleted!');
+    }
+    function renderRegs(filter='') {
+        const tbody = document.getElementById('reg-tbody');
+        const list = filter ? registrations.filter(r => {
+            const s = students.find(x=>x.id===r.studentId);
+            const c = courses.find(x=>x.id===r.courseId);
+            return (s&&s.name.toLowerCase().includes(filter)) || (c&&c.name.toLowerCase().includes(filter));
+        }) : registrations;
+        if (!list.length) { tbody.innerHTML = `<tr><td colspan="5"><div class="empty-state">No registrations found.</div></td></tr>`; return; }
+        tbody.innerHTML = list.map(r => {
+            const s = students.find(x=>x.id===r.studentId);
+            const c = courses.find(x=>x.id===r.courseId);
+            return `<tr onclick="selectReg(${r.id})">
+      <td>${r.id}</td>
+      <td class="name-col">${s?s.name:'Unknown'}</td>
+      <td>${c?c.name:'Unknown'}</td>
+      <td>${r.date}</td>
+      <td><span class="badge ${r.status==='Active'?'badge-active':'badge-inactive'}">${r.status}</span></td>
+    </tr>`;
+        }).join('');
+    }
+    function selectReg(id) {
+        selectedReg = id;
+        const r = registrations.find(x=>x.id===id);
+        if (!r) return;
+        document.getElementById('r-id').value = r.id;
+        document.getElementById('r-student').value = r.studentId;
+        document.getElementById('r-course').value = r.courseId;
+        document.getElementById('r-date').value = r.date;
+        document.getElementById('r-status').value = r.status;
+    }
+    function searchRegs(v) { renderRegs(v.toLowerCase()); }
+
+    // ===== INIT =====
+    renderCourses();
+    document.getElementById('r-date').valueAsDate = new Date();
+</script>
+</body>
+</html>
